@@ -1,0 +1,166 @@
+\require{physics}
+\require{amsmath}
+
+%%%%% Macros
+%%% Arrows
+\newcommand{\Ra}{\Rightarrow}
+\newcommand{\La}{\Leftarrow}
+\newcommand{\Lra}{\Leftrightarrow}
+\newcommand{\Ua}{\Uparrow}
+\newcommand{\Da}{\Downarrow}
+\newcommand{\Uda}{\Updownarrow}
+
+
+\newcommand{\Raq}{\Rightarrow\q}
+\newcommand{\Laq}{\Leftarrow\q}
+\newcommand{\Lraq}{\Leftrightarrow\q}
+\newcommand{\Uaq}{\Uparrow\q}
+\newcommand{\Daq}{\Downarrow\q}
+\newcommand{\Udaq}{\Updownarrow\q}
+
+
+\newcommand{\ra}{\rightarrow}
+\newcommand{\la}{\leftarrow}
+\newcommand{\lra}{\leftrightarrow}
+\newcommand{\ua}{\uparrow}
+\newcommand{\da}{\downarrow}
+\newcommand{\uda}{\updownarrow}
+
+\newcommand{\raq}{\rightarrow\q}
+\newcommand{\laq}{\leftarrow\q}
+\newcommand{\lraq}{\leftrightarrow\q}
+\newcommand{\uaq}{\uparrow\q}
+\newcommand{\daq}{\downarrow\q}
+\newcommand{\udaq}{\updownarrow\q}
+
+%%% Tensors
+\newcommand{\v}[1]{\underline{\mathbf{#1}}}
+\newcommand{\m}[1]{\underline{\v{#1}}}
+
+%%% Quad
+\newcommand{\q}{\quad}
+\newcommand{\qq}{\q\q}
+\newcommand{\qqq}{\q\qq}
+\newcommand{\qqqq}{\q\qqq}
+\newcommand{\qqqqq}{\q\qqqq}
+
+%%% Text
+\newcommand{\twhere}{\text{where }}
+\newcommand{\tif}{\text{if }}
+\newcommand{\tand}{\text{and }}
+
+%%% Quad texts
+\newcommand{\qtext}[1]{\q\text{#1}}
+\renewcommand{\qqtext}[1]{\q\qtext{#1}}
+\newcommand{\qqqtext}[1]{\q\q\qtext{#1}}
+\newcommand{\qqqqtext}[1]{\q\q\q\qtext{#1}}
+\newcommand{\qqqqqtext}[1]{\q\q\q\q\qtext{#1}}
+
+% Where
+\newcommand{\qwhere}[1]{\q\twhere #1}
+\newcommand{\qqwhere}[1]{\q\qwhere{#1}}
+\newcommand{\qqqwhere}[1]{\q\q\qwhere{#1}}
+\newcommand{\qqqqwhere}[1]{\q\q\q\qwhere{#1}}
+\newcommand{\qqqqqwhere}[1]{\q\q\q\q\qwhere{#1}}
+\newcommand{\qtwhere}[1]{\qwhere{\text{#1}}}
+\newcommand{\qqtwhere}[1]{\qqwhere{\text{#1}}}
+\newcommand{\qqqtwhere}[1]{\qqqwhere{\text{#1}}}
+\newcommand{\qqqqtwhere}[1]{\qqqqwhere{\text{#1}}}
+\newcommand{\qqqqqtwhere}[1]{\qqqqqwhere{\text{#1}}}
+
+% If
+\newcommand{\qif}[1]{\q\tif #1}
+\newcommand{\qqif}[1]{\q\qif{#1}}
+\newcommand{\qqqif}[1]{\q\q\qif{#1}}
+\newcommand{\qqqqif}[1]{\q\q\q\qif{#1}}
+\newcommand{\qqqqqif}[1]{\q\q\q\q\qif{#1}}
+\newcommand{\qtif}[1]{\qif{\text{#1}}}
+\newcommand{\qqtif}[1]{\qqif{\text{#1}}}
+\newcommand{\qqqtif}[1]{\qqqif{\text{#1}}}
+\newcommand{\qqqqtif}[1]{\qqqqif{\text{#1}}}
+\newcommand{\qqqqqtif}[1]{\qqqqqif{\text{#1}}}
+
+
+
+%%% Blackboard bold sets
+\newcommand{\B}[1]{\mathbb{#1}}
+
+%%% Infinity
+\newcommand{\i}{\infty}
+
+%%% Weird spacing + macro
+\newcommand{\fa}{\ \forall\ }
+\newcommand{\E}{\ \exists\ }
+\newcommand{\nE}{\ \nexists\ }
+
+%%% Fractions
+\newcommand{\half}{\tfrac{1}{2}}
+\newcommand{\Half}{\frac{1}{2}}
+
+\newcommand{\third}{\tfrac{1}{3}}
+\newcommand{\Third}{\frac{1}{3}}
+
+\newcommand{\fourth}{\tfrac{1}{4}}
+\newcommand{\Fourth}{\frac{1}{4}}
+
+%%% Fourier
+\newcommand{\ft}{\mathcal{F}}
+\newcommand{\ift}{\mathcal{F}^{-1}}
+
+%%% Reciprocal
+\newcommand{\r}[1]{#1^{-1}}
+\newcommand{\R}[1]{\frac{1}{#1}}
+
+%%% Infinitessimals
+\newcommand{\d}[1]{\dd{#1}}
+\newcommand{\D}[1]{\partial #1}
+\newcommand{\ddv}[1]{\d{\v{#1}}}
+
+%%% Operators
+\newcommand{\o}[1]{\hat{#1}}
+
+%%% Tilde
+\newcommand{\~}[1]{\tilde{#1}}
+
+%%% Vector calculus
+\newcommand{\lapl}{\laplacian}
+
+% Remap div to Div
+\let\Div\div
+\renewcommand{\div}{\divergence\ }
+
+%%% Wordy stuff
+\newcommand{\Let}{\text{Let}\ }
+
+%%% Dirac notation
+\let\bk\braket
+
+%%% Conjugation and transposition
+\newcommand{\conj}[1]{#1^{\ast}}
+\let\c\conj
+
+\newcommand{\hermitian}[1]{#1^{\dagger}}
+\let\herm\hermitian
+\let\h\hermitian
+
+\newcommand{\transpose}[1]{#1^T}
+\let\trans\transpose
+\let\T\transpose
+
+%%% Statistics
+\newcommand{\mean}[1]{\left\langle #1 \right\rangle}
+
+%%% Math sizes
+% See: https://github.com/mathjax/MathJax/issues/2039
+\let\footnotesize\small
+
+%%%
+\newcommand{\const}{\text{ const. }}
+\newcommand{\Const}{\text{ constant }}
+
+%%% Sign function
+\DeclareMathOperator{\sgn}{sgn}
+
+%%% Bra-ket
+\newcommand{\k}[1]{\ket{#1}}
+\newcommand{\b}[1]{\bra{#1}}
