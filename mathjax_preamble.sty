@@ -34,7 +34,9 @@
 
 %%% Tensors
 \newcommand{\v}[1]{\underline{\mathbf{#1}}}
+\newcommand{\uv}[1]{\hat{\v{#1}}}
 \newcommand{\m}[1]{\underline{\v{#1}}}
+
 
 %%% Quad
 \newcommand{\q}{\quad}
@@ -122,6 +124,7 @@
 
 %%% Operators
 \newcommand{\o}[1]{\hat{#1}}
+\newcommand{\vo}[1]{\v{\o{#1}}}
 
 %%% Tilde
 \newcommand{\~}[1]{\tilde{#1}}
@@ -146,6 +149,14 @@
 \newcommand{\hermitian}[1]{#1^{\dagger}}
 \let\herm\hermitian
 \let\h\hermitian
+
+\newcommand{\hermitianoperator}[1]{\hat{#1}^{\dagger}}
+\let\hermop\hermitianoperator
+\let\ho\hermitianoperator
+
+%%% Upper index
+\newcommand{\upperindex}[1]{^{\qty(#1)}}
+\let\ui\upperindex
 
 \newcommand{\transpose}[1]{#1^T}
 \let\trans\transpose
@@ -204,4 +215,24 @@
 \newcommand{\evalat}[2]{\left. #1 \right|_{#2}}
 
 %%% Intrinsic derivative
-\newcommand{\ddv}[2]{\frac{D #1}{D #2}}
+\newcommand{\ddv}[2]{\frac{\text{D} #1}{\text{D} #2}}
+\newcommand{\ddvtwo}[2]{\frac{\text{D}^2 #1}{\text{D} #2^2}}
+
+%%% Inverse
+\newcommand{\inv}[1]{{#1}^{-1}}
+
+%%% Simple Reference. For use with in inline text after using `\tag{...}`
+\newcommand{\sr}[1]{(\text{#1})}
+
+%%% Easier fractions
+\newcommand{\f}[2]{\frac{#1}{#2}}
+
+%%% Higher order terms
+\newcommand{\HOT}[0]{\text{H.O.T}}
+
+%%% Unit
+\newcommand{\u}[1]{\mathrm{#1}}
+\newcommand{\U}[1]{\qty[\u{#1}]}
+
+%%% Text
+\newcommand{\t}[1]{\text{#1}}
